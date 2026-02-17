@@ -366,7 +366,6 @@ async function init() {
 
     await idbSet("meta", "lastModules", keys);
 
-    $("#appTitle").textContent = "Offline Bovichain PWA - Teste";
     $("#subTitle").textContent = "UI montada por URL + IndexedDB (sem sync)";
     $("#cfgInfo").innerHTML = `
     <div class="muted">
