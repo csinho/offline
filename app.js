@@ -322,13 +322,6 @@ async function saveOffline() {
     await renderModule();
 }
 
-async function resetLocal() {
-    await idbClear("meta");
-    await idbClear("records");
-    await idbClear("drafts");
-    toast("Reset local feito.");
-    await init();
-}
 
 // ---------- PWA ----------
 async function registerSW() {
@@ -373,7 +366,7 @@ async function init() {
 
     await idbSet("meta", "lastModules", keys);
 
-    $("#appTitle").textContent = "Offline (modules=...)";
+    $("#appTitle").textContent = "Offline Bovichain PWA - Teste";
     $("#subTitle").textContent = "UI montada por URL + IndexedDB (sem sync)";
     $("#cfgInfo").innerHTML = `
     <div class="muted">
@@ -383,7 +376,6 @@ async function init() {
   `;
 
     $("#btnSave").onclick = saveOffline;
-    $("#btnReset").onclick = resetLocal;
 
     await registerSW();
     swStatusDebug();
