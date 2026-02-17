@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Offline Builder</title>
+    <meta name="theme-color" content="#f9bc01" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <style>
+        :root {
+            --bg: #0b0f17;
+            --card: #111827;
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+            --border: rgba(255, 255, 255, .08);
+            --accent: #f9bc01;
+            --accent2: #ffd56a;
+            --danger: #ef4444;
+            --ok: #22c55e;
+            --radius: 18px;
+        }
+
+        body {
+            margin: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+            background: radial-gradient(1200px 700px at 20% -10%, rgba(249, 188, 1, .25), transparent 60%),
+                radial-gradient(900px 500px at 100% 0%, rgba(34, 197, 94, .12), transparent 55%),
+                var(--bg);
+            color: var(--text);
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 18px;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: space-between;
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: rgba(17, 24, 39, .7);
+            backdrop-filter: blur(10px);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            box-shadow: 0 10px 26px rgba(249, 188, 1, .18);
+        }
+
+        .title {
+            font-weight: 700;
+            letter-spacing: .2px;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        .btns {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        button {
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, .06);
+            color: var(--text);
+            border-radius: 14px;
+            padding: 10px 12px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        button.primary {
+            background: linear-gradient(135deg, rgba(249, 188, 1, .95), rgba(255, 213, 106, .9));
+            color: #111827;
+            border-color: rgba(249, 188, 1, .35);
+        }
+
+        button.danger {
+            border-color: rgba(239, 68, 68, .35);
+            background: rgba(239, 68, 68, .12);
+        }
+
+        .grid {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 14px;
+        }
+
+        .card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: rgba(17, 24, 39, .65);
+            backdrop-filter: blur(10px);
+            padding: 14px;
+        }
+
+        .h {
+            font-weight: 800;
+            margin: 0 0 10px;
+        }
+
+        .muted {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .tab {
+            padding: 10px 12px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, .04);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .tab.active {
+            border-color: rgba(249, 188, 1, .35);
+            box-shadow: 0 12px 28px rgba(249, 188, 1, .09);
+            background: rgba(249, 188, 1, .10);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, .05);
+            font-size: 12px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: var(--ok);
+        }
+
+        .dot.off {
+            background: var(--danger);
+        }
+
+        .form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        label {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        input,
+        select,
+        textarea {
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: rgba(0, 0, 0, .18);
+            color: var(--text);
+            padding: 10px 12px;
+            outline: none;
+        }
+
+        textarea {
+            min-height: 90px;
+            grid-column: 1 / -1;
+            resize: vertical;
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .list {
+            margin-top: 12px;
+            border-top: 1px solid var(--border);
+            padding-top: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .item {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, .04);
+            padding: 10px 12px;
+        }
+
+        .item .small {
+            color: var(--muted);
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .toast {
+            position: fixed;
+            left: 18px;
+            bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .toast>div {
+            pointer-events: auto;
+            border: 1px solid var(--border);
+            background: rgba(17, 24, 39, .85);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 10px 12px;
+            min-width: 260px;
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="topbar">
+            <div class="brand">
+                <div class="logo"></div>
+                <div>
+                    <div class="title" id="appTitle">Offline Builder</div>
+                    <div class="subtitle" id="subTitle">Carregando configuração…</div>
+                </div>
+            </div>
+
+            <div class="btns">
+                <button class="primary" id="btnSave">Salvar Offline</button>
+                <button class="danger" id="btnReset">Reset local</button>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="h">Módulos</div>
+                <div class="row">
+                    <span class="badge"><span id="netDot" class="dot off"></span><span
+                            id="netLabel">offline</span></span>
+                    <span class="badge">Registros locais: <b id="localCount">0</b></span>
+                </div>
+
+                <div class="muted" style="margin-top:10px" id="cfgInfo"></div>
+                <div class="tabs" id="tabs" style="margin-top:12px"></div>
+            </div>
+
+            <div class="card">
+                <div class="h" id="viewTitle">…</div>
+                <div class="muted" id="viewDesc">…</div>
+
+                <div id="view"></div>
+
+                <div class="list" id="localList"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script type="module" src="./app.js"></script>
+</body>
+
+</html>
