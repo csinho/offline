@@ -380,8 +380,16 @@ async function init() {
     swStatusDebug();
     renderTabs();
     await renderModule();
+    await renderModule();
+hideSplash();
 }
 
-
+function hideSplash(){
+  const el = document.getElementById("splash");
+  if (!el) return;
+  el.style.transition = "opacity .18s ease";
+  el.style.opacity = "0";
+  setTimeout(() => el.remove(), 220);
+}
 
 init();
