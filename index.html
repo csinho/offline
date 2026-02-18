@@ -266,9 +266,50 @@
             }
         }
     </style>
+    
+<style>
+@keyframes loadbar { from { transform: translateX(-30%); } to { transform: translateX(140%); } }
+</style>
 </head>
 
 <body>
+    <div id="splash" style="
+  position:fixed; inset:0; z-index:99999;
+  display:flex; align-items:center; justify-content:center;
+  background: radial-gradient(1200px 700px at 20% -10%, rgba(249,188,1,.25), transparent 60%),
+              #0b0f17;
+  color:#e5e7eb;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+">
+  <div style="text-align:center; padding:24px;">
+    <div style="
+      width:64px; height:64px; margin:0 auto 14px;
+      border-radius:18px;
+      background: linear-gradient(135deg, #f9bc01, #ffd56a);
+      box-shadow: 0 10px 26px rgba(249,188,1,.18);
+    "></div>
+
+    <div style="font-weight:800; font-size:18px;">Offline Builder</div>
+    <div style="opacity:.75; margin-top:6px; font-size:13px;">
+      Carregando…
+    </div>
+
+    <div style="
+      width:220px; height:10px; border-radius:999px;
+      background: rgba(255,255,255,.10);
+      margin:16px auto 0;
+      overflow:hidden;
+    ">
+      <div style="
+        width:45%; height:100%;
+        background: rgba(249,188,1,.9);
+        border-radius:999px;
+        animation: loadbar 1.1s ease-in-out infinite alternate;
+      "></div>
+    </div>
+  </div>
+</div>
+
     <div class="wrap">
         <div class="topbar">
             <div class="brand">
