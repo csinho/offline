@@ -5,31 +5,5 @@
     "scope": "./",
     "display": "standalone",
     "background_color": "#0b0f17",
-    "theme_color": "#f9bc01",
-    "icons": [
-  {
-    "src": "https://68fd17df3b7b66733aa0ca1faace6445.cdn.bubble.io/f1771380853795x340445657345089150/icon-192.png?_gl=1*1d09db0*_gcl_aw*R0NMLjE3NjM4ODU0OTUuQ2p3S0NBaUFfb3JKQmhCTkVpd0FCa2RtakI2ckFnR1ZkckxfWkhHSXZGMGZjbm8xakN2OENxamtJSDZGUXg0ZjJLU1FJVU80SFc5ZFNCb0NFODRRQXZEX0J3RQ..*_gcl_au*MTk2NTkxMDQ3Ny4xNzYzODg1NDky*_ga*MTY3MTcyOTE3NC4xNzU0NTY0NDQx*_ga_BFPVR2DEE2*czE3NzEzODA4MTEkbzEwJGcxJHQxNzcxMzgwOTUyJGo1MSRsMCRoMA..",
-    "sizes": "192x192",
-    "type": "image/png",
-    "purpose": "any"
-  },
-  {
-    "src": "https://68fd17df3b7b66733aa0ca1faace6445.cdn.bubble.io/f1771381116153x135684428090335310/icon-192-maskable.png?_gl=1*14k3v7k*_gcl_aw*R0NMLjE3NjM4ODU0OTUuQ2p3S0NBaUFfb3JKQmhCTkVpd0FCa2RtakI2ckFnR1ZkckxfWkhHSXZGMGZjbm8xakN2OENxamtJSDZGUXg0ZjJLU1FJVU80SFc5ZFNCb0NFODRRQXZEX0J3RQ..*_gcl_au*MTk2NTkxMDQ3Ny4xNzYzODg1NDky*_ga*MTY3MTcyOTE3NC4xNzU0NTY0NDQx*_ga_BFPVR2DEE2*czE3NzEzODA4MTEkbzEwJGcxJHQxNzcxMzgwOTUyJGo1MSRsMCRoMA..",
-    "sizes": "192x192",
-    "type": "image/png",
-    "purpose": "maskable"
-  },
-  {
-    "src": "https://68fd17df3b7b66733aa0ca1faace6445.cdn.bubble.io/f1771381040470x256208226281065660/icon-512.png?_gl=1*15cx1ll*_gcl_aw*R0NMLjE3NjM4ODU0OTUuQ2p3S0NBaUFfb3JKQmhCTkVpd0FCa2RtakI2ckFnR1ZkckxfWkhHSXZGMGZjbm8xakN2OENxamtJSDZGUXg0ZjJLU1FJVU80SFc5ZFNCb0NFODRRQXZEX0J3RQ..*_gcl_au*MTk2NTkxMDQ3Ny4xNzYzODg1NDky*_ga*MTY3MTcyOTE3NC4xNzU0NTY0NDQx*_ga_BFPVR2DEE2*czE3NzEzODA4MTEkbzEwJGcxJHQxNzcxMzgwOTUyJGo1MSRsMCRoMA..",
-    "sizes": "512x512",
-    "type": "image/png",
-    "purpose": "any"
-  },
-  {
-    "src": "https://68fd17df3b7b66733aa0ca1faace6445.cdn.bubble.io/f1771381165773x565467035628515840/icon-512-maskable.png?_gl=1*ubf20y*_gcl_aw*R0NMLjE3NjM4ODU0OTUuQ2p3S0NBaUFfb3JKQmhCTkVpd0FCa2RtakI2ckFnR1ZkckxfWkhHSXZGMGZjbm8xakN2OENxamtJSDZGUXg0ZjJLU1FJVU80SFc5ZFNCb0NFODRRQXZEX0J3RQ..*_gcl_au*MTk2NTkxMDQ3Ny4xNzYzODg1NDky*_ga*MTY3MTcyOTE3NC4xNzU0NTY0NDQx*_ga_BFPVR2DEE2*czE3NzEzODA4MTEkbzEwJGcxJHQxNzcxMzgwOTUyJGo1MSRsMCRoMA..",
-    "sizes": "512x512",
-    "type": "image/png",
-    "purpose": "maskable"
-  }
-    ]
+    "theme_color": "#f9bc01"    
 }
